@@ -1,0 +1,694 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB51A00E1DEAD77C00B2E195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB51A00D1DEAD77C00B2E195 /* AppDelegate.swift */; };
+		FB51A0101DEAD77C00B2E195 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB51A00F1DEAD77C00B2E195 /* ViewController.swift */; };
+		FB51A0131DEAD77C00B2E195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB51A0111DEAD77C00B2E195 /* Main.storyboard */; };
+		FB51A0151DEAD77C00B2E195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB51A0141DEAD77C00B2E195 /* Assets.xcassets */; };
+		FB51A0181DEAD77C00B2E195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB51A0161DEAD77C00B2E195 /* LaunchScreen.storyboard */; };
+		FB51A0231DEAD77C00B2E195 /* DeuceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB51A0221DEAD77C00B2E195 /* DeuceTests.swift */; };
+		FB51A0281DEAD77C00B2E195 /* Deuce WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FB51A0271DEAD77C00B2E195 /* Deuce WatchKit App.app */; };
+		FB51A02E1DEAD77C00B2E195 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB51A02C1DEAD77C00B2E195 /* Interface.storyboard */; };
+		FB51A0301DEAD77C00B2E195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB51A02F1DEAD77C00B2E195 /* Assets.xcassets */; };
+		FB51A0371DEAD77C00B2E195 /* Deuce WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB51A0361DEAD77C00B2E195 /* Deuce WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FB51A03E1DEAD77C00B2E195 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB51A03D1DEAD77C00B2E195 /* InterfaceController.swift */; };
+		FB51A0401DEAD77C00B2E195 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB51A03F1DEAD77C00B2E195 /* ExtensionDelegate.swift */; };
+		FB51A0421DEAD77C00B2E195 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB51A0411DEAD77C00B2E195 /* NotificationController.swift */; };
+		FB51A0441DEAD77C00B2E195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB51A0431DEAD77C00B2E195 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB51A01F1DEAD77C00B2E195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB51A0021DEAD77C00B2E195 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB51A0091DEAD77C00B2E195;
+			remoteInfo = Deuce;
+		};
+		FB51A0291DEAD77C00B2E195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB51A0021DEAD77C00B2E195 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB51A0261DEAD77C00B2E195;
+			remoteInfo = "Deuce WatchKit App";
+		};
+		FB51A0381DEAD77C00B2E195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB51A0021DEAD77C00B2E195 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB51A0351DEAD77C00B2E195;
+			remoteInfo = "Deuce WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FB51A04B1DEAD77C00B2E195 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FB51A0371DEAD77C00B2E195 /* Deuce WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB51A04F1DEAD77C00B2E195 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FB51A0281DEAD77C00B2E195 /* Deuce WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FB51A00A1DEAD77C00B2E195 /* Deuce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deuce.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB51A00D1DEAD77C00B2E195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB51A00F1DEAD77C00B2E195 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB51A0121DEAD77C00B2E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB51A0141DEAD77C00B2E195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB51A0171DEAD77C00B2E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB51A0191DEAD77C00B2E195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB51A01E1DEAD77C00B2E195 /* DeuceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeuceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB51A0221DEAD77C00B2E195 /* DeuceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeuceTests.swift; sourceTree = "<group>"; };
+		FB51A0241DEAD77C00B2E195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB51A0271DEAD77C00B2E195 /* Deuce WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Deuce WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB51A02D1DEAD77C00B2E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		FB51A02F1DEAD77C00B2E195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB51A0311DEAD77C00B2E195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB51A0361DEAD77C00B2E195 /* Deuce WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Deuce WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB51A03C1DEAD77C00B2E195 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		FB51A03D1DEAD77C00B2E195 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		FB51A03F1DEAD77C00B2E195 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		FB51A0411DEAD77C00B2E195 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		FB51A0431DEAD77C00B2E195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB51A0451DEAD77C00B2E195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB51A0071DEAD77C00B2E195 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB51A01B1DEAD77C00B2E195 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB51A0331DEAD77C00B2E195 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB51A0011DEAD77C00B2E195 = {
+			isa = PBXGroup;
+			children = (
+				FB51A00C1DEAD77C00B2E195 /* Deuce */,
+				FB51A0211DEAD77C00B2E195 /* DeuceTests */,
+				FB51A02B1DEAD77C00B2E195 /* Deuce WatchKit App */,
+				FB51A03A1DEAD77C00B2E195 /* Deuce WatchKit Extension */,
+				FB51A00B1DEAD77C00B2E195 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB51A00B1DEAD77C00B2E195 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB51A00A1DEAD77C00B2E195 /* Deuce.app */,
+				FB51A01E1DEAD77C00B2E195 /* DeuceTests.xctest */,
+				FB51A0271DEAD77C00B2E195 /* Deuce WatchKit App.app */,
+				FB51A0361DEAD77C00B2E195 /* Deuce WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB51A00C1DEAD77C00B2E195 /* Deuce */ = {
+			isa = PBXGroup;
+			children = (
+				FB51A00D1DEAD77C00B2E195 /* AppDelegate.swift */,
+				FB51A00F1DEAD77C00B2E195 /* ViewController.swift */,
+				FB51A0111DEAD77C00B2E195 /* Main.storyboard */,
+				FB51A0141DEAD77C00B2E195 /* Assets.xcassets */,
+				FB51A0161DEAD77C00B2E195 /* LaunchScreen.storyboard */,
+				FB51A0191DEAD77C00B2E195 /* Info.plist */,
+			);
+			path = Deuce;
+			sourceTree = "<group>";
+		};
+		FB51A0211DEAD77C00B2E195 /* DeuceTests */ = {
+			isa = PBXGroup;
+			children = (
+				FB51A0221DEAD77C00B2E195 /* DeuceTests.swift */,
+				FB51A0241DEAD77C00B2E195 /* Info.plist */,
+			);
+			path = DeuceTests;
+			sourceTree = "<group>";
+		};
+		FB51A02B1DEAD77C00B2E195 /* Deuce WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				FB51A02C1DEAD77C00B2E195 /* Interface.storyboard */,
+				FB51A02F1DEAD77C00B2E195 /* Assets.xcassets */,
+				FB51A0311DEAD77C00B2E195 /* Info.plist */,
+			);
+			path = "Deuce WatchKit App";
+			sourceTree = "<group>";
+		};
+		FB51A03A1DEAD77C00B2E195 /* Deuce WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FB51A03D1DEAD77C00B2E195 /* InterfaceController.swift */,
+				FB51A03F1DEAD77C00B2E195 /* ExtensionDelegate.swift */,
+				FB51A0411DEAD77C00B2E195 /* NotificationController.swift */,
+				FB51A0431DEAD77C00B2E195 /* Assets.xcassets */,
+				FB51A0451DEAD77C00B2E195 /* Info.plist */,
+				FB51A03B1DEAD77C00B2E195 /* Supporting Files */,
+			);
+			path = "Deuce WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		FB51A03B1DEAD77C00B2E195 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB51A03C1DEAD77C00B2E195 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB51A0091DEAD77C00B2E195 /* Deuce */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB51A0501DEAD77C00B2E195 /* Build configuration list for PBXNativeTarget "Deuce" */;
+			buildPhases = (
+				FB51A0061DEAD77C00B2E195 /* Sources */,
+				FB51A0071DEAD77C00B2E195 /* Frameworks */,
+				FB51A0081DEAD77C00B2E195 /* Resources */,
+				FB51A04F1DEAD77C00B2E195 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB51A02A1DEAD77C00B2E195 /* PBXTargetDependency */,
+			);
+			name = Deuce;
+			productName = Deuce;
+			productReference = FB51A00A1DEAD77C00B2E195 /* Deuce.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB51A01D1DEAD77C00B2E195 /* DeuceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB51A0531DEAD77C00B2E195 /* Build configuration list for PBXNativeTarget "DeuceTests" */;
+			buildPhases = (
+				FB51A01A1DEAD77C00B2E195 /* Sources */,
+				FB51A01B1DEAD77C00B2E195 /* Frameworks */,
+				FB51A01C1DEAD77C00B2E195 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB51A0201DEAD77C00B2E195 /* PBXTargetDependency */,
+			);
+			name = DeuceTests;
+			productName = DeuceTests;
+			productReference = FB51A01E1DEAD77C00B2E195 /* DeuceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FB51A0261DEAD77C00B2E195 /* Deuce WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB51A04C1DEAD77C00B2E195 /* Build configuration list for PBXNativeTarget "Deuce WatchKit App" */;
+			buildPhases = (
+				FB51A0251DEAD77C00B2E195 /* Resources */,
+				FB51A04B1DEAD77C00B2E195 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB51A0391DEAD77C00B2E195 /* PBXTargetDependency */,
+			);
+			name = "Deuce WatchKit App";
+			productName = "Deuce WatchKit App";
+			productReference = FB51A0271DEAD77C00B2E195 /* Deuce WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		FB51A0351DEAD77C00B2E195 /* Deuce WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB51A0481DEAD77C00B2E195 /* Build configuration list for PBXNativeTarget "Deuce WatchKit Extension" */;
+			buildPhases = (
+				FB51A0321DEAD77C00B2E195 /* Sources */,
+				FB51A0331DEAD77C00B2E195 /* Frameworks */,
+				FB51A0341DEAD77C00B2E195 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Deuce WatchKit Extension";
+			productName = "Deuce WatchKit Extension";
+			productReference = FB51A0361DEAD77C00B2E195 /* Deuce WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB51A0021DEAD77C00B2E195 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Austin Conlon";
+				TargetAttributes = {
+					FB51A0091DEAD77C00B2E195 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+					FB51A01D1DEAD77C00B2E195 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FB51A0091DEAD77C00B2E195;
+					};
+					FB51A0261DEAD77C00B2E195 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+					FB51A0351DEAD77C00B2E195 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FB51A0051DEAD77C00B2E195 /* Build configuration list for PBXProject "Deuce" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB51A0011DEAD77C00B2E195;
+			productRefGroup = FB51A00B1DEAD77C00B2E195 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB51A0091DEAD77C00B2E195 /* Deuce */,
+				FB51A01D1DEAD77C00B2E195 /* DeuceTests */,
+				FB51A0261DEAD77C00B2E195 /* Deuce WatchKit App */,
+				FB51A0351DEAD77C00B2E195 /* Deuce WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB51A0081DEAD77C00B2E195 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB51A0181DEAD77C00B2E195 /* LaunchScreen.storyboard in Resources */,
+				FB51A0151DEAD77C00B2E195 /* Assets.xcassets in Resources */,
+				FB51A0131DEAD77C00B2E195 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB51A01C1DEAD77C00B2E195 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB51A0251DEAD77C00B2E195 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB51A0301DEAD77C00B2E195 /* Assets.xcassets in Resources */,
+				FB51A02E1DEAD77C00B2E195 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB51A0341DEAD77C00B2E195 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB51A0441DEAD77C00B2E195 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB51A0061DEAD77C00B2E195 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB51A0101DEAD77C00B2E195 /* ViewController.swift in Sources */,
+				FB51A00E1DEAD77C00B2E195 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB51A01A1DEAD77C00B2E195 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB51A0231DEAD77C00B2E195 /* DeuceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB51A0321DEAD77C00B2E195 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB51A0421DEAD77C00B2E195 /* NotificationController.swift in Sources */,
+				FB51A0401DEAD77C00B2E195 /* ExtensionDelegate.swift in Sources */,
+				FB51A03E1DEAD77C00B2E195 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB51A0201DEAD77C00B2E195 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB51A0091DEAD77C00B2E195 /* Deuce */;
+			targetProxy = FB51A01F1DEAD77C00B2E195 /* PBXContainerItemProxy */;
+		};
+		FB51A02A1DEAD77C00B2E195 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB51A0261DEAD77C00B2E195 /* Deuce WatchKit App */;
+			targetProxy = FB51A0291DEAD77C00B2E195 /* PBXContainerItemProxy */;
+		};
+		FB51A0391DEAD77C00B2E195 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB51A0351DEAD77C00B2E195 /* Deuce WatchKit Extension */;
+			targetProxy = FB51A0381DEAD77C00B2E195 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB51A0111DEAD77C00B2E195 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB51A0121DEAD77C00B2E195 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB51A0161DEAD77C00B2E195 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB51A0171DEAD77C00B2E195 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FB51A02C1DEAD77C00B2E195 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB51A02D1DEAD77C00B2E195 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB51A0461DEAD77C00B2E195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB51A0471DEAD77C00B2E195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB51A0491DEAD77C00B2E195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "Deuce WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Deuce.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		FB51A04A1DEAD77C00B2E195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "Deuce WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Deuce.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		FB51A04D1DEAD77C00B2E195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Deuce_WatchKit_Extension;
+				INFOPLIST_FILE = "Deuce WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Deuce.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		FB51A04E1DEAD77C00B2E195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Deuce_WatchKit_Extension;
+				INFOPLIST_FILE = "Deuce WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Deuce.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		FB51A0511DEAD77C00B2E195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Deuce/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Deuce;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FB51A0521DEAD77C00B2E195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Deuce/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Deuce;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FB51A0541DEAD77C00B2E195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DeuceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DeuceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Deuce.app/Deuce";
+			};
+			name = Debug;
+		};
+		FB51A0551DEAD77C00B2E195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DeuceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DeuceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Deuce.app/Deuce";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB51A0051DEAD77C00B2E195 /* Build configuration list for PBXProject "Deuce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB51A0461DEAD77C00B2E195 /* Debug */,
+				FB51A0471DEAD77C00B2E195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB51A0481DEAD77C00B2E195 /* Build configuration list for PBXNativeTarget "Deuce WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB51A0491DEAD77C00B2E195 /* Debug */,
+				FB51A04A1DEAD77C00B2E195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB51A04C1DEAD77C00B2E195 /* Build configuration list for PBXNativeTarget "Deuce WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB51A04D1DEAD77C00B2E195 /* Debug */,
+				FB51A04E1DEAD77C00B2E195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB51A0501DEAD77C00B2E195 /* Build configuration list for PBXNativeTarget "Deuce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB51A0511DEAD77C00B2E195 /* Debug */,
+				FB51A0521DEAD77C00B2E195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB51A0531DEAD77C00B2E195 /* Build configuration list for PBXNativeTarget "DeuceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB51A0541DEAD77C00B2E195 /* Debug */,
+				FB51A0551DEAD77C00B2E195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB51A0021DEAD77C00B2E195 /* Project object */;
+}
