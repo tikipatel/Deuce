@@ -282,19 +282,26 @@
 				TargetAttributes = {
 					FB51A0091DEAD77C00B2E195 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = AV84QJNZ49;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					FB51A01D1DEAD77C00B2E195 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = AV84QJNZ49;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FB51A0091DEAD77C00B2E195;
 					};
 					FB51A0261DEAD77C00B2E195 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = AV84QJNZ49;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					FB51A0351DEAD77C00B2E195 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = AV84QJNZ49;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -530,6 +537,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AV84QJNZ49;
 				INFOPLIST_FILE = "Deuce WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Deuce.watchkitapp.watchkitextension;
@@ -538,7 +547,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Debug;
 		};
@@ -546,6 +555,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AV84QJNZ49;
 				INFOPLIST_FILE = "Deuce WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Deuce.watchkitapp.watchkitextension;
@@ -554,7 +565,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Release;
 		};
@@ -563,6 +574,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AV84QJNZ49;
 				IBSC_MODULE = Deuce_WatchKit_Extension;
 				INFOPLIST_FILE = "Deuce WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Deuce.watchkitapp;
@@ -580,6 +593,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AV84QJNZ49;
 				IBSC_MODULE = Deuce_WatchKit_Extension;
 				INFOPLIST_FILE = "Deuce WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Deuce.watchkitapp;
@@ -596,6 +611,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AV84QJNZ49;
 				INFOPLIST_FILE = Deuce/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Deuce;
@@ -608,6 +626,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AV84QJNZ49;
 				INFOPLIST_FILE = Deuce/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Deuce;
@@ -621,6 +642,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AV84QJNZ49;
 				INFOPLIST_FILE = DeuceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.DeuceTests;
@@ -635,6 +658,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AV84QJNZ49;
 				INFOPLIST_FILE = DeuceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.DeuceTests;
@@ -663,6 +688,7 @@
 				FB51A04A1DEAD77C00B2E195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB51A04C1DEAD77C00B2E195 /* Build configuration list for PBXNativeTarget "Deuce WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -671,6 +697,7 @@
 				FB51A04E1DEAD77C00B2E195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB51A0501DEAD77C00B2E195 /* Build configuration list for PBXNativeTarget "Deuce" */ = {
 			isa = XCConfigurationList;
@@ -679,6 +706,7 @@
 				FB51A0521DEAD77C00B2E195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB51A0531DEAD77C00B2E195 /* Build configuration list for PBXNativeTarget "DeuceTests" */ = {
 			isa = XCConfigurationList;
@@ -687,6 +715,7 @@
 				FB51A0551DEAD77C00B2E195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
