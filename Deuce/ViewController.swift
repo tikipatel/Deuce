@@ -312,7 +312,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let yourMatchScoreToSend = ["Your match score": ""]
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                         session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -332,7 +332,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -340,7 +340,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         opponentMatchScore += 1
                         matchScore = (yourMatchScore, opponentMatchScore)
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -369,7 +369,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let yourMatchScoreToSend = ["Your match score": ""]
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                         session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -389,7 +389,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -397,7 +397,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         opponentMatchScore += 1
                         matchScore = (yourMatchScore, opponentMatchScore)
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -426,7 +426,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let yourMatchScoreToSend = ["Your match score": ""]
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                         session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -446,7 +446,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -454,7 +454,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         opponentMatchScore += 1
                         matchScore = (yourMatchScore, opponentMatchScore)
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -483,7 +483,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let yourMatchScoreToSend = ["Your match score": ""]
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                         session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -503,7 +503,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -512,7 +512,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         opponentMatchScore += 1
                         matchScore = (yourMatchScore, opponentMatchScore)
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -555,7 +555,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let yourMatchScoreToSend = ["Your match score": ""]
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                         session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -575,7 +575,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -587,7 +587,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         firstPlayerGameScoreLabel.setTitle("🏆", for: .normal)
                         secondPlayerGameScoreLabel.setTitle("", for: .normal)
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -616,7 +616,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let yourMatchScoreToSend = ["Your match score": ""]
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                         session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -636,7 +636,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -644,7 +644,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         opponentMatchScore += 1
                         matchScore = (yourMatchScore, opponentMatchScore)
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -673,7 +673,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let yourMatchScoreToSend = ["Your match score": ""]
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                         session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -693,7 +693,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -701,7 +701,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         opponentMatchScore += 1
                         matchScore = (yourMatchScore, opponentMatchScore)
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -730,7 +730,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let yourMatchScoreToSend = ["Your match score": ""]
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                         session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -750,7 +750,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -758,7 +758,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         opponentMatchScore += 1
                         matchScore = (yourMatchScore, opponentMatchScore)
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -810,7 +810,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let yourMatchScoreToSend = ["Your match score": ""]
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                         session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -830,7 +830,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -838,7 +838,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         opponentMatchScore += 1
                         matchScore = (yourMatchScore, opponentMatchScore)
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -867,7 +867,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let yourMatchScoreToSend = ["Your match score": ""]
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                         session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -887,7 +887,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -895,7 +895,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         opponentMatchScore += 1
                         matchScore = (yourMatchScore, opponentMatchScore)
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -924,7 +924,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let yourMatchScoreToSend = ["Your match score": ""]
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                         session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -944,7 +944,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -952,7 +952,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         opponentMatchScore += 1
                         matchScore = (yourMatchScore, opponentMatchScore)
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -979,7 +979,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         print(error)
                     })
                     
-                    let yourMatchScoreToSend = ["Your match score": ""]
+                    let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                     session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                         print(error)
                     })
@@ -999,7 +999,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         print(error)
                     })
                     
-                    let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                    let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                     session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                         print(error)
                     })
@@ -1039,7 +1039,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                                 print(error)
                             })
                             
-                            let yourMatchScoreToSend = ["Your match score": ""]
+                            let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                             session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
                             })
@@ -1059,7 +1059,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                                 print(error)
                             })
                             
-                            let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                            let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                             session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
                             })
@@ -1067,7 +1067,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             opponentMatchScore += 1
                             matchScore = (yourMatchScore, opponentMatchScore)
                             
-                            let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                            let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                             session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
                             })
@@ -1096,7 +1096,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                                 print(error)
                             })
                             
-                            let yourMatchScoreToSend = ["Your match score": ""]
+                            let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                             session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
                             })
@@ -1116,7 +1116,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                                 print(error)
                             })
                             
-                            let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                            let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                             session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
                             })
@@ -1124,7 +1124,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             opponentMatchScore += 1
                             matchScore = (yourMatchScore, opponentMatchScore)
                             
-                            let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                            let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                             session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
                             })
@@ -1153,7 +1153,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                                 print(error)
                             })
                             
-                            let yourMatchScoreToSend = ["Your match score": ""]
+                            let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
                             session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
                             })
@@ -1173,7 +1173,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                                 print(error)
                             })
                             
-                            let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                            let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                             session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
                             })
@@ -1181,7 +1181,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             opponentMatchScore += 1
                             matchScore = (yourMatchScore, opponentMatchScore)
                             
-                            let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                            let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                             session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
                             })                        }
@@ -1189,7 +1189,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         opponentMatchScore += 1
                         matchScore = (yourMatchScore, opponentMatchScore)
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": opponentMatchScore]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -1430,7 +1430,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": ""]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -1488,7 +1488,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": ""]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -1545,7 +1545,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": ""]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -1591,7 +1591,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                             print(error)
                         })
                         
-                        let opponentMatchScoreToSend = ["Opponent's match score": ""]
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                         session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
@@ -1644,129 +1644,221 @@ class ViewController: UIViewController, WCSessionDelegate {
                 case 3:
                     switch matchScore {
                     case (1, 0...1):
-                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
-                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
-                            print(error)
-                        })
-//                        opponentSetScoreLabel.setHidden(true)
+                        yourMatchScore += 1
+                        matchScore = (yourMatchScore, opponentMatchScore)
+                        
                         firstPlayerGameScoreLabel.setTitle("", for: .normal)
+                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
+                        
                         let yourServingIndicatorToSend = ["Your serving indicator": ""]
                         session.sendMessage(yourServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
-//                        yourSetScoreLabel.setHidden(true)
-                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
-                        yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
-                        matchScore = (yourMatchScore, opponentMatchScore)
-                        let opponentGameScoreToSend = ["Opponent's game score": ""]
-                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
-                            print(error)
-                        })
+                        
                         let yourGameScoreToSend = ["Your game score": "🏆"]
                         session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
                             print(error)
                         })
                         
+                        let yourSetScoreToSend = ["Your set score": ""]
+                        session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
+                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentGameScoreToSend = ["Opponent's game score": ""]
+                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentSetScoreToSend = ["Opponent's set score": ""]
+                        session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
+                        session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     default:
                         yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
                         matchScore = (yourMatchScore, opponentMatchScore)
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     }
                 case 5:
                     switch matchScore {
                     case (2, 0...2):
-                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
-                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
-                            print(error)
-                        })
-//                        opponentSetScoreLabel.setHidden(true)
+                        yourMatchScore += 1
+                        matchScore = (yourMatchScore, opponentMatchScore)
+                        
                         firstPlayerGameScoreLabel.setTitle("", for: .normal)
+                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
+                        
                         let yourServingIndicatorToSend = ["Your serving indicator": ""]
                         session.sendMessage(yourServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
-//                        yourSetScoreLabel.setHidden(true)
-                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
-                        yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
-                        matchScore = (yourMatchScore, opponentMatchScore)
-                        let opponentGameScoreToSend = ["Opponent's game score": ""]
-                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
-                            print(error)
-                        })
+                        
                         let yourGameScoreToSend = ["Your game score": "🏆"]
                         session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
                             print(error)
                         })
                         
+                        let yourSetScoreToSend = ["Your set score": ""]
+                        session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
+                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentGameScoreToSend = ["Opponent's game score": ""]
+                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentSetScoreToSend = ["Opponent's set score": ""]
+                        session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
+                        session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     default:
                         yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
                         matchScore = (yourMatchScore, opponentMatchScore)
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     }
                 case 7:
                     switch matchScore {
                     case (3, 0...3):
-                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
-                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
-                            print(error)
-                        })
-//                        opponentSetScoreLabel.setHidden(true)
+                        yourMatchScore += 1
+                        matchScore = (yourMatchScore, opponentMatchScore)
+                        
                         firstPlayerGameScoreLabel.setTitle("", for: .normal)
+                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
+                        
                         let yourServingIndicatorToSend = ["Your serving indicator": ""]
                         session.sendMessage(yourServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
-//                        yourSetScoreLabel.setHidden(true)
-                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
-                        yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
-                        matchScore = (yourMatchScore, opponentMatchScore)
-                        let opponentGameScoreToSend = ["Opponent's game score": ""]
-                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
-                            print(error)
-                        })
+                        
                         let yourGameScoreToSend = ["Your game score": "🏆"]
                         session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
                             print(error)
                         })
                         
+                        let yourSetScoreToSend = ["Your set score": ""]
+                        session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
+                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentGameScoreToSend = ["Opponent's game score": ""]
+                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentSetScoreToSend = ["Opponent's set score": ""]
+                        session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
+                        session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     default:
                         yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
                         matchScore = (yourMatchScore, opponentMatchScore)
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     }
                 default:
-//                    opponentServingIndicatorLabel.setHidden(true)
-//                    opponentSetScoreLabel.setHidden(true)
-                    firstPlayerGameScoreLabel.setTitle("", for: .normal)
-//                    yourServingIndicatorLabel.setHidden(true)
-//                    yourSetScoreLabel.setHidden(true)
-                    secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
                     yourMatchScore += 1
-//                    yourMatchScoreLabel.setText(String(yourMatchScore))
                     matchScore = (yourMatchScore, opponentMatchScore)
-                    let opponentGameScoreToSend = ["Opponent's game score": ""]
-                    session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                        // catch any errors here
+                    
+                    firstPlayerGameScoreLabel.setTitle("", for: .normal)
+                    secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
+                    
+                    let yourServingIndicatorToSend = ["Your serving indicator": ""]
+                    session.sendMessage(yourServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
                         print(error)
                     })
+                    
                     let yourGameScoreToSend = ["Your game score": "🏆"]
                     session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                        // catch any errors here
                         print(error)
                     })
                     
+                    let yourSetScoreToSend = ["Your set score": ""]
+                    session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
                     
+                    let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                    session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
+                    
+                    let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
+                    session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
+                    
+                    let opponentGameScoreToSend = ["Opponent's game score": ""]
+                    session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
+                    
+                    let opponentSetScoreToSend = ["Opponent's set score": ""]
+                    session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
+                    
+                    let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
+                    session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
                 }
-//                yourMatchScoreLabel.setText(String(yourMatchScore))
             default:
                 break
             }
@@ -1788,129 +1880,221 @@ class ViewController: UIViewController, WCSessionDelegate {
                 case 3:
                     switch matchScore {
                     case (1, 0...1):
-                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
-                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
-                            print(error)
-                        })
-//                        opponentSetScoreLabel.setHidden(true)
+                        yourMatchScore += 1
+                        matchScore = (yourMatchScore, opponentMatchScore)
+                        
                         firstPlayerGameScoreLabel.setTitle("", for: .normal)
+                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
+                        
                         let yourServingIndicatorToSend = ["Your serving indicator": ""]
                         session.sendMessage(yourServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
-//                        yourSetScoreLabel.setHidden(true)
-//                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
-                        yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
-                        matchScore = (yourMatchScore, opponentMatchScore)
-                        let opponentGameScoreToSend = ["Opponent's game score": ""]
-                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
-                            print(error)
-                        })
+                        
                         let yourGameScoreToSend = ["Your game score": "🏆"]
                         session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
                             print(error)
                         })
                         
+                        let yourSetScoreToSend = ["Your set score": ""]
+                        session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
+                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentGameScoreToSend = ["Opponent's game score": ""]
+                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentSetScoreToSend = ["Opponent's set score": ""]
+                        session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
+                        session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     default:
                         yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
                         matchScore = (yourMatchScore, opponentMatchScore)
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     }
                 case 5:
                     switch matchScore {
                     case (2, 0...2):
-                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
-                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
-                            print(error)
-                        })
-//                        opponentSetScoreLabel.setHidden(true)
+                        yourMatchScore += 1
+                        matchScore = (yourMatchScore, opponentMatchScore)
+                        
                         firstPlayerGameScoreLabel.setTitle("", for: .normal)
+                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
+                        
                         let yourServingIndicatorToSend = ["Your serving indicator": ""]
                         session.sendMessage(yourServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
-//                        yourSetScoreLabel.setHidden(true)
-                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
-                        yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
-                        matchScore = (yourMatchScore, opponentMatchScore)
-                        let opponentGameScoreToSend = ["Opponent's game score": ""]
-                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
-                            print(error)
-                        })
+                        
                         let yourGameScoreToSend = ["Your game score": "🏆"]
                         session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
                             print(error)
                         })
                         
+                        let yourSetScoreToSend = ["Your set score": ""]
+                        session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
+                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentGameScoreToSend = ["Opponent's game score": ""]
+                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentSetScoreToSend = ["Opponent's set score": ""]
+                        session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
+                        session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     default:
                         yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
                         matchScore = (yourMatchScore, opponentMatchScore)
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     }
                 case 7:
                     switch matchScore {
                     case (3, 0...3):
-                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
-                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
-                            print(error)
-                        })
-//                        opponentSetScoreLabel.setHidden(true)
+                        yourMatchScore += 1
+                        matchScore = (yourMatchScore, opponentMatchScore)
+                        
                         firstPlayerGameScoreLabel.setTitle("", for: .normal)
+                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
+                        
                         let yourServingIndicatorToSend = ["Your serving indicator": ""]
                         session.sendMessage(yourServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
-//                        yourSetScoreLabel.setHidden(true)
-                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
-                        yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
-                        matchScore = (yourMatchScore, opponentMatchScore)
-                        let opponentGameScoreToSend = ["Opponent's game score": ""]
-                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
-                            print(error)
-                        })
+                        
                         let yourGameScoreToSend = ["Your game score": "🏆"]
                         session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
                             print(error)
                         })
                         
+                        let yourSetScoreToSend = ["Your set score": ""]
+                        session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
+                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentGameScoreToSend = ["Opponent's game score": ""]
+                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentSetScoreToSend = ["Opponent's set score": ""]
+                        session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
+                        session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     default:
                         yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
                         matchScore = (yourMatchScore, opponentMatchScore)
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     }
                 default:
-//                    opponentServingIndicatorLabel.setHidden(true)
-//                    opponentSetScoreLabel.setHidden(true)
-                    firstPlayerGameScoreLabel.setTitle("", for: .normal)
-//                    yourServingIndicatorLabel.setHidden(true)
-//                    yourSetScoreLabel.setHidden(true)
-                    secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
                     yourMatchScore += 1
-//                    yourMatchScoreLabel.setText(String(yourMatchScore))
                     matchScore = (yourMatchScore, opponentMatchScore)
-                    let opponentGameScoreToSend = ["Opponent's game score": ""]
-                    session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                        // catch any errors here
+                    
+                    firstPlayerGameScoreLabel.setTitle("", for: .normal)
+                    secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
+                    
+                    let yourServingIndicatorToSend = ["Your serving indicator": ""]
+                    session.sendMessage(yourServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
                         print(error)
                     })
+                    
                     let yourGameScoreToSend = ["Your game score": "🏆"]
                     session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                        // catch any errors here
                         print(error)
                     })
                     
+                    let yourSetScoreToSend = ["Your set score": ""]
+                    session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
                     
+                    let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                    session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
+                    
+                    let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
+                    session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
+                    
+                    let opponentGameScoreToSend = ["Opponent's game score": ""]
+                    session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
+                    
+                    let opponentSetScoreToSend = ["Opponent's set score": ""]
+                    session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
+                    
+                    let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
+                    session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
                 }
-//                yourMatchScoreLabel.setText(String(yourMatchScore))
             default:
                 if (yourSetScore > opponentSetScore + 1) && (opponentSetScore >= 5) {
                     opponentGameScore = 0
@@ -1924,116 +2108,221 @@ class ViewController: UIViewController, WCSessionDelegate {
                     case 3:
                         switch matchScore {
                         case (1, 0...1):
-//                            opponentServingIndicatorLabel.setHidden(true)
-//                            opponentSetScoreLabel.setHidden(true)
-                            firstPlayerGameScoreLabel.setTitle("", for: .normal)
-//                            yourServingIndicatorLabel.setHidden(true)
-//                            yourSetScoreLabel.setHidden(true)
-                            secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
                             yourMatchScore += 1
-//                            yourMatchScoreLabel.setText(String(yourMatchScore))
                             matchScore = (yourMatchScore, opponentMatchScore)
-                            let opponentGameScoreToSend = ["Opponent's game score": ""]
-                            session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                                // catch any errors here
-                                print(error)
-                            })
-                            let yourGameScoreToSend = ["Your game score": "🏆"]
-                            session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                                // catch any errors here
+                            
+                            firstPlayerGameScoreLabel.setTitle("", for: .normal)
+                            secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
+                            
+                            let yourServingIndicatorToSend = ["Your serving indicator": ""]
+                            session.sendMessage(yourServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
                             })
                             
+                            let yourGameScoreToSend = ["Your game score": "🏆"]
+                            session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let yourSetScoreToSend = ["Your set score": ""]
+                            session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                            session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
+                            session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let opponentGameScoreToSend = ["Opponent's game score": ""]
+                            session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let opponentSetScoreToSend = ["Opponent's set score": ""]
+                            session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
+                            session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
                         default:
                             yourMatchScore += 1
-//                            yourMatchScoreLabel.setText(String(yourMatchScore))
                             matchScore = (yourMatchScore, opponentMatchScore)
+                            
+                            let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                            session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
                         }
                     case 5:
                         switch matchScore {
                         case (2, 0...2):
-//                            opponentServingIndicatorLabel.setHidden(true)
-//                            opponentSetScoreLabel.setHidden(true)
-                            firstPlayerGameScoreLabel.setTitle("", for: .normal)
-//                            yourServingIndicatorLabel.setHidden(true)
-//                            yourSetScoreLabel.setHidden(true)
-                            secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
                             yourMatchScore += 1
-//                            yourMatchScoreLabel.setText(String(yourMatchScore))
                             matchScore = (yourMatchScore, opponentMatchScore)
-                            let opponentGameScoreToSend = ["Opponent's game score": ""]
-                            session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                                // catch any errors here
-                                print(error)
-                            })
-                            let yourGameScoreToSend = ["Your game score": "🏆"]
-                            session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                                // catch any errors here
+                            
+                            firstPlayerGameScoreLabel.setTitle("", for: .normal)
+                            secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
+                            
+                            let yourServingIndicatorToSend = ["Your serving indicator": ""]
+                            session.sendMessage(yourServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
                             })
                             
+                            let yourGameScoreToSend = ["Your game score": "🏆"]
+                            session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let yourSetScoreToSend = ["Your set score": ""]
+                            session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                            session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
+                            session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let opponentGameScoreToSend = ["Opponent's game score": ""]
+                            session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let opponentSetScoreToSend = ["Opponent's set score": ""]
+                            session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
+                            session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
                         default:
                             yourMatchScore += 1
-//                            yourMatchScoreLabel.setText(String(yourMatchScore))
                             matchScore = (yourMatchScore, opponentMatchScore)
+                            
+                            let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                            session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
                         }
                     case 7:
                         switch matchScore {
                         case (3, 0...3):
-//                            opponentServingIndicatorLabel.setHidden(true)
-//                            opponentSetScoreLabel.setHidden(true)
-                            firstPlayerGameScoreLabel.setTitle("", for: .normal)
-//                            yourServingIndicatorLabel.setHidden(true)
-//                            yourSetScoreLabel.setHidden(true)
-                            secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
                             yourMatchScore += 1
-//                            yourMatchScoreLabel.setText(String(yourMatchScore))
                             matchScore = (yourMatchScore, opponentMatchScore)
-                            let opponentGameScoreToSend = ["Opponent's game score": ""]
-                            session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                                // catch any errors here
-                                print(error)
-                            })
-                            let yourGameScoreToSend = ["Your game score": "🏆"]
-                            session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                                // catch any errors here
+                            
+                            firstPlayerGameScoreLabel.setTitle("", for: .normal)
+                            secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
+                            
+                            let yourServingIndicatorToSend = ["Your serving indicator": ""]
+                            session.sendMessage(yourServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
                             })
                             
+                            let yourGameScoreToSend = ["Your game score": "🏆"]
+                            session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let yourSetScoreToSend = ["Your set score": ""]
+                            session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                            session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
+                            session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let opponentGameScoreToSend = ["Opponent's game score": ""]
+                            session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let opponentSetScoreToSend = ["Opponent's set score": ""]
+                            session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
+                            
+                            let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
+                            session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
                         default:
                             yourMatchScore += 1
-//                            yourMatchScoreLabel.setText(String(yourMatchScore))
                             matchScore = (yourMatchScore, opponentMatchScore)
+                            
+                            let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                            session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                                print(error)
+                            })
                         }
                     default:
-                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
-                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
-                            print(error)
-                        })
-//                        opponentSetScoreLabel.setHidden(true)
+                        yourMatchScore += 1
+                        matchScore = (yourMatchScore, opponentMatchScore)
+                        
                         firstPlayerGameScoreLabel.setTitle("", for: .normal)
+                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
+                        
                         let yourServingIndicatorToSend = ["Your serving indicator": ""]
                         session.sendMessage(yourServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
                             print(error)
                         })
-//                        yourSetScoreLabel.setHidden(true)
-                        secondPlayerGameScoreLabel.setTitle("🏆", for: .normal)
-                        yourMatchScore += 1
-//                        yourMatchScoreLabel.setText(String(yourMatchScore))
-                        matchScore = (yourMatchScore, opponentMatchScore)
-                        let opponentGameScoreToSend = ["Opponent's game score": ""]
-                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
-                            print(error)
-                        })
+                        
                         let yourGameScoreToSend = ["Your game score": "🏆"]
                         session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                            // catch any errors here
                             print(error)
                         })
                         
+                        let yourSetScoreToSend = ["Your set score": ""]
+                        session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let yourMatchScoreToSend = ["Your match score": String(yourMatchScore)]
+                        session.sendMessage(yourMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentServingIndicatorToSend = ["Opponent's serving indicator": ""]
+                        session.sendMessage(opponentServingIndicatorToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentGameScoreToSend = ["Opponent's game score": ""]
+                        session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentSetScoreToSend = ["Opponent's set score": ""]
+                        session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
+                        
+                        let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
+                        session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
+                            print(error)
+                        })
                     }
-//                    yourMatchScoreLabel.setText(String(yourMatchScore))
                 }
             }
         }

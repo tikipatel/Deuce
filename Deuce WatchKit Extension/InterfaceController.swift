@@ -56,8 +56,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     var gameScoreValue: String
     var setScoreValue: String
+    var matchScoreValue: String
     var particularPlayerIsOpponentForUpdatingGameScore: Bool
     var particularPlayerIsOpponentForUpdatingSetScore: Bool
+    var particularPlayerIsOpponentForUpdatingMatchScore: Bool
     
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         // Return data to be accessed in ResultsController
@@ -94,8 +96,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         gameScoreValue = "Love"
         setScoreValue = "0"
+        matchScoreValue = "0"
         particularPlayerIsOpponentForUpdatingGameScore = true
         particularPlayerIsOpponentForUpdatingSetScore = true
+        particularPlayerIsOpponentForUpdatingMatchScore = true
         
         super.init()
         
@@ -129,32 +133,23 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         // Handle received message.
         
         if let particularPlayerScore = message["Opponent's game score"] as? String {
-            
             particularPlayerIsOpponentForUpdatingGameScore = true
             gameScoreValue = particularPlayerScore
-            
         } else if let particularPlayerScore = message["Your game score"] as? String {
-            
             particularPlayerIsOpponentForUpdatingGameScore = false
             gameScoreValue = particularPlayerScore
-            
         } else if let particularPlayerScore = message["Opponent's set score"] as? String {
-            
             particularPlayerIsOpponentForUpdatingSetScore = true
             setScoreValue = particularPlayerScore
-            
         } else if let particularPlayerScore = message["Your set score"] as? String {
-            
             particularPlayerIsOpponentForUpdatingSetScore = false
             setScoreValue = particularPlayerScore
-        
-        } else {
-            
-            gameScoreValue = "Error"
-            setScoreValue = "Error"
-            particularPlayerIsOpponentForUpdatingGameScore = false
-            particularPlayerIsOpponentForUpdatingSetScore = false
-       
+        } else if let particularPlayerScore = message["Opponent's match score"] as? String {
+            particularPlayerIsOpponentForUpdatingMatchScore = true
+            matchScoreValue = particularPlayerScore
+        } else if let particularPlayerScore = message["Your match score"] as? String {
+            particularPlayerIsOpponentForUpdatingMatchScore = false
+            matchScoreValue = particularPlayerScore
         }
         
         DispatchQueue.main.sync {
@@ -168,6 +163,12 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                     self.yourSetScoreLabel.setText(setScoreValue)
                 }
                 
+                if particularPlayerIsOpponentForUpdatingMatchScore == true {
+                    self.opponentMatchScoreLabel.setText(matchScoreValue)
+                } else {
+                    self.yourMatchScoreLabel.setText(matchScoreValue)
+                }
+                
             } else if particularPlayerIsOpponentForUpdatingGameScore == false {
                 
                 self.yourGameScoreLabel.setText(gameScoreValue)
@@ -176,6 +177,12 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                     self.opponentSetScoreLabel.setText(setScoreValue)
                 } else {
                     self.yourSetScoreLabel.setText(setScoreValue)
+                }
+                
+                if particularPlayerIsOpponentForUpdatingMatchScore == true {
+                    self.opponentMatchScoreLabel.setText(matchScoreValue)
+                } else {
+                    self.yourMatchScoreLabel.setText(matchScoreValue)
                 }
             }
         }
