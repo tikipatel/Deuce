@@ -55,24 +55,6 @@ class ViewController: UIViewController, WCSessionDelegate {
                 break
         }
     }
-
-//    required init(coder aDecoder: NSCoder) {
-//        // Initialize properties here.
-//        matchLength = 1
-//        setType = 1
-//        settingsData = ["match length": matchLength, "set type": setType]
-//        isServing = server.you
-//        opponentSetScore = 0
-//        opponentGameScore = 0
-//        opponentMatchScore = 0
-//        yourSetScore = 0
-//        yourGameScore = 0
-//        yourMatchScore = 0
-//        setScore = (yourSetScore, opponentSetScore)
-//        matchScore = (yourMatchScore, opponentMatchScore)
-//
-//        super.init(coder aDecoder: NSCoder)
-//    }
     
     required init(coder aDecoder: NSCoder) {
         // Initialize properties here.
@@ -127,6 +109,11 @@ class ViewController: UIViewController, WCSessionDelegate {
                 // catch any errors here
                 print(error)
             })
+            
+            let hapticToSend = ["Haptic": "click"]
+            session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                print(error)
+            })
         } else if opponentGameScore == 30 {
             opponentGameScore += 10
             
@@ -135,6 +122,11 @@ class ViewController: UIViewController, WCSessionDelegate {
                 let messageToSend = ["Opponent's game score": String(opponentGameScore)]
                 session.sendMessage(messageToSend, replyHandler: nil, errorHandler: {error in
                     // catch any errors here
+                    print(error)
+                })
+                
+                let hapticToSend = ["Haptic": "click"]
+                session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
                     print(error)
                 })
             } else if yourGameScore == 40 {
@@ -153,11 +145,17 @@ class ViewController: UIViewController, WCSessionDelegate {
             }
             
         } else if opponentGameScore == 40 && yourGameScore <= 30 {
-//            if (opponentSetScore + yourSetScore) % 2 != 0 {
-//                WKInterfaceDevice.current().play(WKHapticType.notification)
-//            } else {
-//                
-//            }
+            if (opponentSetScore + yourSetScore) % 2 != 0 {
+                let hapticToSend = ["Haptic": "notification"]
+                session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                    print(error)
+                })
+            } else {
+                let hapticToSend = ["Haptic": "click"]
+                session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                    print(error)
+                })
+            }
             opponentSetScore += 1
 //            switch isServing {
 //            case server.opponent:
@@ -192,6 +190,11 @@ class ViewController: UIViewController, WCSessionDelegate {
             if opponentGameScore == yourGameScore {
                 opponentGameScore += 1
                 
+                let hapticToSend = ["Haptic": "click"]
+                session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                    print(error)
+                })
+                
                 if isServing == .opponent {
                     firstPlayerGameScoreLabel.setTitle("Ad", for: .normal)
                     let messageToSend = ["Opponent's game score": "Ad in"]
@@ -207,7 +210,9 @@ class ViewController: UIViewController, WCSessionDelegate {
                         print(error)
                     })
                 }
+                
                 secondPlayerGameScoreLabel.setTitle("🎾", for: .normal)
+                
                 let messageToSend = ["Your game score": ""]
                 session.sendMessage(messageToSend, replyHandler: nil, errorHandler: {error in
                     // catch any errors here
@@ -216,24 +221,37 @@ class ViewController: UIViewController, WCSessionDelegate {
             } else if opponentGameScore < yourGameScore {
                 opponentGameScore += 1
                 
+                let hapticToSend = ["Haptic": "click"]
+                session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                    print(error)
+                })
+                
                 firstPlayerGameScoreLabel.setTitle("Deuce", for: .normal)
                 secondPlayerGameScoreLabel.setTitle("Deuce", for: .normal)
+                
                 let opponentGameScoreToSend = ["Opponent's game score": "Deuce"]
                 session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
                     // catch any errors here
                     print(error)
                 })
+                
                 let yourGameScoreToSend = ["Your game score": "Deuce"]
                 session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
                     // catch any errors here
                     print(error)
                 })
             } else if opponentGameScore > yourGameScore {
-//                if (opponentSetScore + yourSetScore) % 2 != 0 {
-//                    WKInterfaceDevice.current().play(WKHapticType.notification)
-//                } else {
-//                    
-//                }
+                if (opponentSetScore + yourSetScore) % 2 != 0 {
+                    let hapticToSend = ["Haptic": "notification"]
+                    session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
+                } else {
+                    let hapticToSend = ["Haptic": "click"]
+                    session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                        print(error)
+                    })
+                }
                 opponentSetScore += 1
 //                switch isServing {
 //                case server.opponent:
@@ -1184,7 +1202,8 @@ class ViewController: UIViewController, WCSessionDelegate {
                             let opponentMatchScoreToSend = ["Opponent's match score": String(opponentMatchScore)]
                             session.sendMessage(opponentMatchScoreToSend, replyHandler: nil, errorHandler: {error in
                                 print(error)
-                            })                        }
+                            })
+                        }
                     default:
                         opponentMatchScore += 1
                         matchScore = (yourMatchScore, opponentMatchScore)
@@ -1203,6 +1222,10 @@ class ViewController: UIViewController, WCSessionDelegate {
     @IBAction func incrementSecondPlayerScore(_ sender: Any) {
         if yourGameScore <= 15 {
             yourGameScore += 15
+            let hapticToSend = ["Haptic": "click"]
+            session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                print(error)
+            })
             
             secondPlayerGameScoreLabel.setTitle(String(yourGameScore), for: .normal)
             let messageToSend = ["Your game score": String(yourGameScore)]
@@ -1212,6 +1235,10 @@ class ViewController: UIViewController, WCSessionDelegate {
             })
         } else if yourGameScore == 30 {
             yourGameScore += 10
+            let hapticToSend = ["Haptic": "click"]
+            session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                print(error)
+            })
             
             if opponentGameScore <= 30 {
                 secondPlayerGameScoreLabel.setTitle(String (yourGameScore), for: .normal)
@@ -1236,11 +1263,17 @@ class ViewController: UIViewController, WCSessionDelegate {
             }
             
         } else if yourGameScore == 40 && opponentGameScore <= 30 {
-//            if (opponentSetScore + yourSetScore) % 2 != 0 {
-//                WKInterfaceDevice.current().play(WKHapticType.notification)
-//            } else {
-//                
-//            }
+            if (opponentSetScore + yourSetScore) % 2 != 0 {
+                let hapticToSend = ["Haptic": "notification"]
+                session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                    print(error)
+                })
+            } else {
+                let hapticToSend = ["Haptic": "click"]
+                session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                    print(error)
+                })
+            }
             yourSetScore += 1
 //            switch isServing {
 //            case server.opponent:
@@ -1254,9 +1287,17 @@ class ViewController: UIViewController, WCSessionDelegate {
 //                yourServingIndicatorLabel.setHidden(true)
 //                
 //            }
-//            if (opponentSetScore + yourSetScore) % 2 == 0 {
-//                WKInterfaceDevice.current().play(WKHapticType.notification)
-//            }
+            if (opponentSetScore + yourSetScore) % 2 == 0 {
+                let hapticToSend = ["Haptic": "notification"]
+                session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                    print(error)
+                })
+            } else {
+                let hapticToSend = ["Haptic": "click"]
+                session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                    print(error)
+                })
+            }
             setScore = (yourSetScore, opponentSetScore)
             
             opponentGameScore = 0
@@ -1285,6 +1326,10 @@ class ViewController: UIViewController, WCSessionDelegate {
         } else if yourGameScore >= 40 {
             if yourGameScore == opponentGameScore {
                 yourGameScore += 1
+                let hapticToSend = ["Haptic": "click"]
+                session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                    print(error)
+                })
                 
                 if isServing == .you {
                     secondPlayerGameScoreLabel.setTitle("Ad", for: .normal)
@@ -1323,11 +1368,14 @@ class ViewController: UIViewController, WCSessionDelegate {
                     print(error)
                 })
             } else if yourGameScore > opponentGameScore {
-//                if (opponentSetScore + yourSetScore) % 2 != 0 {
-//                    WKInterfaceDevice.current().play(WKHapticType.notification)
-//                } else {
-//                    
-//                }
+                if (opponentSetScore + yourSetScore) % 2 != 0 {
+                    let hapticToSend = ["Haptic": "notification"]
+                session.sendMessage(hapticToSend, replyHandler: nil, errorHandler: {error in
+                    print(error)
+                })
+                } else {
+                    
+                }
                 yourSetScore += 1
 //                switch isServing {
 //                case server.opponent:

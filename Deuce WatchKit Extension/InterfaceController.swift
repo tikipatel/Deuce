@@ -53,13 +53,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     var yourSetScore: Int
     var yourGameScore: Int
     var yourMatchScore: Int
-    
+
     var gameScoreValue: String
     var setScoreValue: String
     var matchScoreValue: String
     var particularPlayerIsOpponentForUpdatingGameScore: Bool
     var particularPlayerIsOpponentForUpdatingSetScore: Bool
     var particularPlayerIsOpponentForUpdatingMatchScore: Bool
+    
+    var hapticToPlay: String
     
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         // Return data to be accessed in ResultsController
@@ -76,6 +78,17 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             let setType = dictionary["set type"]
             self.matchLength = matchLength!
             self.setType = setType!
+        }
+    }
+    
+    override func willActivate() {
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+        
+        if (WCSession.isSupported()) {
+            session = WCSession.default()
+            session.delegate = self
+            session.activate()
         }
     }
     
@@ -100,27 +113,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         particularPlayerIsOpponentForUpdatingGameScore = true
         particularPlayerIsOpponentForUpdatingSetScore = true
         particularPlayerIsOpponentForUpdatingMatchScore = true
+        hapticToPlay = "click"
         
         super.init()
         
         if ((arc4random_uniform(2)) == 0) {
             isServing = server.opponent
-            opponentServingIndicatorLabel?.setHidden(false)
             
         } else {
             isServing = server.you
-            yourServingIndicatorLabel?.setHidden(false)
-        }
-    }
-    
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-        
-        if (WCSession.isSupported()) {
-            session = WCSession.default()
-            session.delegate = self
-            session.activate()
         }
     }
     
@@ -152,11 +153,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             matchScoreValue = particularPlayerScore
         }
         
+        
         DispatchQueue.main.sync {
             if particularPlayerIsOpponentForUpdatingGameScore == true {
-                
                 self.opponentGameScoreLabel.setText(gameScoreValue)
-                
                 if particularPlayerIsOpponentForUpdatingSetScore == true {
                     self.opponentSetScoreLabel.setText(setScoreValue)
                 } else {
@@ -168,9 +168,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                 } else {
                     self.yourMatchScoreLabel.setText(matchScoreValue)
                 }
-                
             } else if particularPlayerIsOpponentForUpdatingGameScore == false {
-                
                 self.yourGameScoreLabel.setText(gameScoreValue)
                 
                 if particularPlayerIsOpponentForUpdatingSetScore == true {
@@ -185,6 +183,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                     self.yourMatchScoreLabel.setText(matchScoreValue)
                 }
             }
+            
         }
     }
 
@@ -235,11 +234,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             WKInterfaceDevice.current().play(WKHapticType.click)
             opponentGameScoreLabel.setText(String(opponentGameScore))
             let messageToSend = ["Opponent's game score": String(opponentGameScore)]
-            session.sendMessage(messageToSend, replyHandler: { replyMessage in
-                //handle and present the message on screen
-                _ = replyMessage["Opponent's game score"] as? String
-            }, errorHandler: {error in
-                // catch any errors here
+            session.sendMessage(messageToSend, replyHandler: nil, errorHandler: {error in
                 print(error)
             })
         } else if opponentGameScore == 30 {
@@ -248,30 +243,19 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             if yourGameScore <= 30 {
                 opponentGameScoreLabel.setText(String(opponentGameScore))
                 let messageToSend = ["Opponent's game score": String(opponentGameScore)]
-                session.sendMessage(messageToSend, replyHandler: { replyMessage in
-                    //handle and present the message on screen
-                    _ = replyMessage["Opponent's game score"] as? String
-                }, errorHandler: {error in
-                    // catch any errors here
+                session.sendMessage(messageToSend, replyHandler: nil, errorHandler: {error in
                     print(error)
                 })
             } else if yourGameScore == 40 {
                 opponentGameScoreLabel.setText("Deuce")
                 yourGameScoreLabel.setText("Deuce")
+                
                 let opponentGameScoreToSend = ["Opponent's game score": "Deuce"]
-                session.sendMessage(opponentGameScoreToSend, replyHandler: { replyMessage in
-                    //handle and present the message on screen
-                    _ = replyMessage["Opponent's game score"] as? String
-                }, errorHandler: {error in
-                    // catch any errors here
+                session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
                     print(error)
                 })
                 let yourGameScoreToSend = ["Your game score": "Deuce"]
-                session.sendMessage(yourGameScoreToSend, replyHandler: { replyMessage in
-                    //handle and present the message on screen
-                    _ = replyMessage["Opponent's game score"] as? String
-                }, errorHandler: {error in
-                    // catch any errors here
+                session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
                     print(error)
                 })
             }
@@ -1013,12 +997,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             yourGameScore += 15
             WKInterfaceDevice.current().play(WKHapticType.click)
             yourGameScoreLabel.setText(String(yourGameScore))
+            
             let messageToSend = ["Your game score": String(yourGameScore)]
-            session.sendMessage(messageToSend, replyHandler: { replyMessage in
-                //handle and present the message on screen
-                _ = replyMessage["Your game score"] as? String
-            }, errorHandler: {error in
-                // catch any errors here
+            session.sendMessage(messageToSend, replyHandler: nil, errorHandler: {error in
                 print(error)
             })
         } else if yourGameScore == 30 {
@@ -1074,15 +1055,13 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                 yourServingIndicatorLabel.setHidden(true)
                 
             }
-            if (opponentSetScore + yourSetScore) % 2 == 0 {
-                WKInterfaceDevice.current().play(WKHapticType.notification)
-            }
             setScore = (yourSetScore, opponentSetScore)
             
             opponentGameScore = 0
             yourGameScore = 0
             opponentGameScoreLabel.setText("Love")
             yourGameScoreLabel.setText("Love")
+            
             yourSetScoreLabel.setText(String(yourSetScore))
             let opponentGameScoreToSend = ["Opponent's game score": "Love"]
             session.sendMessage(opponentGameScoreToSend, replyHandler: { replyMessage in
@@ -1092,6 +1071,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                 // catch any errors here
                 print(error)
             })
+            
             let yourGameScoreToSend = ["Your game score": "Love"]
             session.sendMessage(yourGameScoreToSend, replyHandler: { replyMessage in
                 //handle and present the message on screen
