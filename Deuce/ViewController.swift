@@ -104,9 +104,9 @@ class ViewController: UIViewController, WCSessionDelegate {
             opponentGameScore += 15
             
             firstPlayerGameScoreLabel.setTitle(String(opponentGameScore), for: .normal)
+            
             let messageToSend = ["Opponent's game score": String(opponentGameScore)]
             session.sendMessage(messageToSend, replyHandler: nil, errorHandler: {error in
-                // catch any errors here
                 print(error)
             })
             
@@ -121,7 +121,6 @@ class ViewController: UIViewController, WCSessionDelegate {
                 firstPlayerGameScoreLabel.setTitle(String(opponentGameScore), for: .normal)
                 let messageToSend = ["Opponent's game score": String(opponentGameScore)]
                 session.sendMessage(messageToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
                 
@@ -134,12 +133,10 @@ class ViewController: UIViewController, WCSessionDelegate {
                 secondPlayerGameScoreLabel.setTitle("Deuce", for: .normal)
                 let opponentGameScoreToSend = ["Opponent's game score": "Deuce"]
                 session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
                 let yourGameScoreToSend = ["Your game score": "Deuce"]
                 session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
             }
@@ -215,7 +212,6 @@ class ViewController: UIViewController, WCSessionDelegate {
                 
                 let messageToSend = ["Your game score": ""]
                 session.sendMessage(messageToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
             } else if opponentGameScore < yourGameScore {
@@ -231,13 +227,11 @@ class ViewController: UIViewController, WCSessionDelegate {
                 
                 let opponentGameScoreToSend = ["Opponent's game score": "Deuce"]
                 session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
                 
                 let yourGameScoreToSend = ["Your game score": "Deuce"]
                 session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
             } else if opponentGameScore > yourGameScore {
@@ -275,17 +269,14 @@ class ViewController: UIViewController, WCSessionDelegate {
                 secondPlayerGameScoreLabel.setTitle("Love", for: .normal)
                 let opponentGameScoreToSend = ["Opponent's game score": "Love"]
                 session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
                 let yourGameScoreToSend = ["Your game score": "Love"]
                 session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
                 let opponentSetScoreToSend = ["Opponent's set score": String(opponentSetScore)]
                 session.sendMessage(opponentSetScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
             }
@@ -1244,7 +1235,6 @@ class ViewController: UIViewController, WCSessionDelegate {
                 secondPlayerGameScoreLabel.setTitle(String (yourGameScore), for: .normal)
                 let messageToSend = ["Your game score": String(yourGameScore)]
                 session.sendMessage(messageToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
             } else if opponentGameScore == 40 {
@@ -1252,12 +1242,10 @@ class ViewController: UIViewController, WCSessionDelegate {
                 secondPlayerGameScoreLabel.setTitle("Deuce", for: .normal)
                 let opponentGameScoreToSend = ["Opponent's game score": "Deuce"]
                 session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
                 let yourGameScoreToSend = ["Your game score": "Deuce"]
                 session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
             }
@@ -1349,7 +1337,6 @@ class ViewController: UIViewController, WCSessionDelegate {
                 firstPlayerGameScoreLabel.setTitle("🎾", for: .normal)
                 let opponentGameScoreToSend = ["Opponent's game score": ""]
                 session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
             } else if yourGameScore < opponentGameScore {
@@ -1359,12 +1346,10 @@ class ViewController: UIViewController, WCSessionDelegate {
                 firstPlayerGameScoreLabel.setTitle("Deuce", for: .normal)
                 let opponentGameScoreToSend = ["Opponent's game score": "Deuce"]
                 session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
                 let yourGameScoreToSend = ["Your game score": "Deuce"]
                 session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
             } else if yourGameScore > opponentGameScore {
@@ -1401,19 +1386,16 @@ class ViewController: UIViewController, WCSessionDelegate {
                 
                 let opponentGameScoreToSend = ["Opponent's game score": "Love"]
                 session.sendMessage(opponentGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
                 
                 let yourGameScoreToSend = ["Your game score": "Love"]
                 session.sendMessage(yourGameScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
                 
                 let yourSetScoreToSend = ["Your set score": String(yourSetScore)]
                 session.sendMessage(yourSetScoreToSend, replyHandler: nil, errorHandler: {error in
-                    // catch any errors here
                     print(error)
                 })
             }
@@ -2376,7 +2358,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         }
     }
     
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         // Handle received message.
         var gameScoreValue: String
         var setScoreValue: String
@@ -2386,6 +2368,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         if let particularPlayerScore = message["Opponent's game score"] as? String {
             particularPlayerIsOpponentForUpdatingGameScore = true
             gameScoreValue = particularPlayerScore
+            print(gameScoreValue)
         } else {
             particularPlayerIsOpponentForUpdatingGameScore = false
             gameScoreValue = (message["Your game score"] as? String)!
@@ -2394,13 +2377,12 @@ class ViewController: UIViewController, WCSessionDelegate {
         DispatchQueue.main.sync {
             if particularPlayerIsOpponentForUpdatingGameScore == true {
                 self.firstPlayerGameScoreLabel.setTitle(gameScoreValue, for: .normal)
-                print()
             } else {
                 self.secondPlayerGameScoreLabel.setTitle(gameScoreValue, for: .normal)
             }
         }
         //send a reply
-        replyHandler(["Value":"Hello Watch" as AnyObject])
+//        replyHandler(["Value":"Hello Watch" as AnyObject])
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {

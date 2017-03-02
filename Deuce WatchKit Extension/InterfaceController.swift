@@ -153,6 +153,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             matchScoreValue = particularPlayerScore
         }
         
+//        if let hapticReceived = message["Haptic"] as? String {
+//            hapticToPlay = hapticReceived
+//        }
         
         DispatchQueue.main.sync {
             if particularPlayerIsOpponentForUpdatingGameScore == true {
@@ -184,6 +187,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                 }
             }
             
+//            if hapticToPlay == "notification" {
+//                WKInterfaceDevice.current().play(WKHapticType.notification)
+//            } else {
+//                WKInterfaceDevice.current().play(WKHapticType.click)
+//            }
         }
     }
 
@@ -233,6 +241,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             opponentGameScore += 15
             WKInterfaceDevice.current().play(WKHapticType.click)
             opponentGameScoreLabel.setText(String(opponentGameScore))
+            
             let messageToSend = ["Opponent's game score": String(opponentGameScore)]
             session.sendMessage(messageToSend, replyHandler: nil, errorHandler: {error in
                 print(error)
