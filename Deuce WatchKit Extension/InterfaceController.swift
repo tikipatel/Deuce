@@ -138,9 +138,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         if ((arc4random_uniform(2)) == 0) {
             isServing = server.opponent
-            
+            opponentServingIndicatorLabel?.setHidden(false)
         } else {
             isServing = server.you
+            yourServingIndicatorLabel?.setHidden(false)
         }
     }
     
