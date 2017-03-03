@@ -78,6 +78,13 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             let setType = dictionary["set type"]
             self.matchLength = matchLength!
             self.setType = setType!
+            
+//            session.sendMessage(["Test key": "[Test value"], replyHandler: nil, errorHandler: {error in
+//                print(error)
+//            })
+//            session.sendMessage(mat, replyHandler: nil, errorHandler: {error in
+//                print(error)
+//            })
         }
     }
     
@@ -89,6 +96,18 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             session = WCSession.default()
             session.delegate = self
             session.activate()
+        }
+    }
+    
+    // , replyHandler: @escaping ([String : Any]) -> Void
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        // Handle received message.
+        if let playerThatScored = message["Player that scored"] as? String {
+            if playerThatScored == "opponent" {
+                incrementOpponentScore()
+            } else {
+                incrementYourScore()
+            }
         }
     }
     
@@ -129,84 +148,19 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-    // , replyHandler: @escaping ([String : Any]) -> Void
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        // Handle received message.
-        
-        if let particularPlayerScore = message["Opponent's game score"] as? String {
-            particularPlayerIsOpponentForUpdatingGameScore = true
-            gameScoreValue = particularPlayerScore
-        } else if let particularPlayerScore = message["Your game score"] as? String {
-            particularPlayerIsOpponentForUpdatingGameScore = false
-            gameScoreValue = particularPlayerScore
-        } else if let particularPlayerScore = message["Opponent's set score"] as? String {
-            particularPlayerIsOpponentForUpdatingSetScore = true
-            setScoreValue = particularPlayerScore
-        } else if let particularPlayerScore = message["Your set score"] as? String {
-            particularPlayerIsOpponentForUpdatingSetScore = false
-            setScoreValue = particularPlayerScore
-        } else if let particularPlayerScore = message["Opponent's match score"] as? String {
-            particularPlayerIsOpponentForUpdatingMatchScore = true
-            matchScoreValue = particularPlayerScore
-        } else if let particularPlayerScore = message["Your match score"] as? String {
-            particularPlayerIsOpponentForUpdatingMatchScore = false
-            matchScoreValue = particularPlayerScore
-        }
-        
-//        if let hapticReceived = message["Haptic"] as? String {
-//            hapticToPlay = hapticReceived
-//        }
-        
-        DispatchQueue.main.sync {
-            if particularPlayerIsOpponentForUpdatingGameScore == true {
-                self.opponentGameScoreLabel.setText(gameScoreValue)
-                if particularPlayerIsOpponentForUpdatingSetScore == true {
-                    self.opponentSetScoreLabel.setText(setScoreValue)
-                } else {
-                    self.yourSetScoreLabel.setText(setScoreValue)
-                }
-                
-                if particularPlayerIsOpponentForUpdatingMatchScore == true {
-                    self.opponentMatchScoreLabel.setText(matchScoreValue)
-                } else {
-                    self.yourMatchScoreLabel.setText(matchScoreValue)
-                }
-            } else if particularPlayerIsOpponentForUpdatingGameScore == false {
-                self.yourGameScoreLabel.setText(gameScoreValue)
-                
-                if particularPlayerIsOpponentForUpdatingSetScore == true {
-                    self.opponentSetScoreLabel.setText(setScoreValue)
-                } else {
-                    self.yourSetScoreLabel.setText(setScoreValue)
-                }
-                
-                if particularPlayerIsOpponentForUpdatingMatchScore == true {
-                    self.opponentMatchScoreLabel.setText(matchScoreValue)
-                } else {
-                    self.yourMatchScoreLabel.setText(matchScoreValue)
-                }
-            }
-            
-//            if hapticToPlay == "notification" {
-//                WKInterfaceDevice.current().play(WKHapticType.notification)
-//            } else {
-//                WKInterfaceDevice.current().play(WKHapticType.click)
-//            }
-        }
-    }
 
     // Mark: Actions
-    @IBAction func sendMessage() {
-        let messageToSend = ["Value":"New score"]
-        session.sendMessage(messageToSend, replyHandler: { replyMessage in
-            //handle and present the message on screen
-            let value = replyMessage["Value"] as? String
-            self.yourSetScoreLabel.setText(value)
-        }, errorHandler: {error in
-            // catch any errors here
-            print(error)
-        })
-    }
+//    @IBAction func sendMessage() {
+//        let messageToSend = ["Value":"New score"]
+//        session.sendMessage(messageToSend, replyHandler: { replyMessage in
+//            //handle and present the message on screen
+//            let value = replyMessage["Value"] as? String
+//            self.yourSetScoreLabel.setText(value)
+//        }, errorHandler: {error in
+//            // catch any errors here
+//            print(error)
+//        })
+//    }
     
     @IBAction func seriesLengthSlider(_ value: Float) {
         switch value {
@@ -236,7 +190,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         }
     }
     
-    @IBAction func incrementOpponentScore(_ sender: Any) {
+    @IBAction func incrementOpponentScore() {
         if opponentGameScore <= 15 {
             opponentGameScore += 15
             WKInterfaceDevice.current().play(WKHapticType.click)
@@ -1001,7 +955,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         }
     }
     
-    @IBAction func incrementYourScore(_ sender: Any) {
+    @IBAction func incrementYourScore() {
         if yourGameScore <= 15 {
             yourGameScore += 15
             WKInterfaceDevice.current().play(WKHapticType.click)
