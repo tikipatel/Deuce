@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16F54b" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12117" systemVersion="16G8c" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12084"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
@@ -17,11 +17,11 @@
                         <label alignment="center" text="One set" id="6nH-Bn-VTw">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <slider width="1" height="38" alignment="left" value="1" maximum="4" steps="4" id="H3i-Wl-J5d">
+                        <slider width="1" height="38" alignment="left" continuous="YES" value="1" minimum="1" maximum="7" steps="3" id="H3i-Wl-J5d">
                             <color key="color" red="0.68628549579999998" green="0.99103605750000001" blue="0.30952829120000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <variation key="device=watch38mm" height="30"/>
                             <connections>
-                                <action selector="seriesLengthSlider:" destination="AgC-eL-Hgc" id="JTp-lr-1ga"/>
+                                <action selector="matchLengthSlider:" destination="AgC-eL-Hgc" id="afN-r0-XtM"/>
                             </connections>
                         </slider>
                         <switch width="1" height="38" alignment="left" value="YES" title="Advantage set" id="9RJ-n2-dtb">
@@ -31,7 +31,7 @@
                                 <fontDescription key="font" type="system" pointSize="11"/>
                             </variation>
                             <connections>
-                                <action selector="typeOfSetSlider:" destination="AgC-eL-Hgc" id="jgw-nE-YnZ"/>
+                                <action selector="changeSetType:" destination="AgC-eL-Hgc" id="B7P-SD-RVd"/>
                             </connections>
                         </switch>
                         <button width="1" height="35" alignment="left" title="Start" id="Rvm-Qn-Mwd">
@@ -53,9 +53,9 @@
                         </label>
                     </items>
                     <connections>
-                        <outlet property="seriesLengthLabel" destination="6nH-Bn-VTw" id="6GR-KK-QbR"/>
-                        <outlet property="seriesLengthSlider" destination="H3i-Wl-J5d" id="1ya-vS-RhR"/>
-                        <outlet property="typeOfSetSlider" destination="9RJ-n2-dtb" id="tIP-lr-v2G"/>
+                        <outlet property="matchLengthLabel" destination="6nH-Bn-VTw" id="LLK-5B-gUE"/>
+                        <outlet property="matchLengthSlider" destination="H3i-Wl-J5d" id="IrC-sc-5RJ"/>
+                        <outlet property="setTypeSwitch" destination="9RJ-n2-dtb" id="mdN-F4-yX4"/>
                     </connections>
                 </controller>
             </objects>
@@ -70,14 +70,14 @@
                             <items>
                                 <group width="1" alignment="left" id="KkB-ja-aiS">
                                     <items>
-                                        <label alignment="left" hidden="YES" text="Serving" id="xxe-gX-FFj" userLabel="Opponent Serving Indicator">
+                                        <label alignment="left" hidden="YES" text="Serving" id="xxe-gX-FFj" userLabel="Player One Serving Label">
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="font" type="system" pointSize="14"/>
                                             <variation key="device=watch38mm">
                                                 <fontDescription key="font" type="system" pointSize="13"/>
                                             </variation>
                                         </label>
-                                        <label alignment="right" text="0" id="OFh-a5-wp2" userLabel="Opponent Set Score">
+                                        <label alignment="right" text="0" id="OFh-a5-wp2" userLabel="First Player Set Score">
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="font" type="system" pointSize="14"/>
                                             <variation key="device=watch38mm">
@@ -86,7 +86,7 @@
                                         </label>
                                     </items>
                                 </group>
-                                <label alignment="center" verticalAlignment="center" text="Love" baselineAdjustment="alignCenters" id="9fp-xg-3SA" userLabel="Opponent Game Score">
+                                <label alignment="center" verticalAlignment="center" text="Love" baselineAdjustment="alignCenters" id="9fp-xg-3SA" userLabel="First Player Game Score">
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="font" type="system" pointSize="23"/>
                                     <variation key="device=watch38mm">
@@ -104,7 +104,7 @@
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="2hP-To-KA9">
                                     <connections>
-                                        <action selector="incrementOpponentScore:" destination="Hlr-PA-eca" id="8FD-Hl-a7D"/>
+                                        <action selector="incrementFirstPlayerScore:" destination="Hlr-PA-eca" id="rKY-i5-gWK"/>
                                     </connections>
                                 </tapGestureRecognizer>
                             </gestureRecognizers>
@@ -124,7 +124,7 @@
                                                 <fontDescription key="font" type="system" pointSize="13"/>
                                             </variation>
                                         </label>
-                                        <label alignment="right" text="0" id="no9-vd-L6Q" userLabel="Your Set Score">
+                                        <label alignment="right" text="0" id="no9-vd-L6Q" userLabel="Second Player Set Score">
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="font" type="system" pointSize="14"/>
                                             <variation key="device=watch38mm">
@@ -133,14 +133,14 @@
                                         </label>
                                     </items>
                                 </group>
-                                <label alignment="center" verticalAlignment="center" text="Love" baselineAdjustment="alignCenters" id="gnp-Ie-dM4">
+                                <label alignment="center" verticalAlignment="center" text="Love" baselineAdjustment="alignCenters" id="gnp-Ie-dM4" userLabel="Second Player Game Score Label">
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="font" type="system" pointSize="23"/>
                                     <variation key="device=watch38mm">
                                         <fontDescription key="font" type="system" pointSize="20"/>
                                     </variation>
                                 </label>
-                                <label alignment="right" verticalAlignment="bottom" text="0" id="Fi3-CN-ldL">
+                                <label alignment="right" verticalAlignment="bottom" text="0" id="Fi3-CN-ldL" userLabel="Second Player Match Score Label">
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="font" type="system" pointSize="14"/>
                                     <variation key="device=watch38mm">
@@ -151,7 +151,7 @@
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="7bl-KV-306">
                                     <connections>
-                                        <action selector="incrementYourScore:" destination="Hlr-PA-eca" id="2CQ-8d-uP0"/>
+                                        <action selector="incrementSecondPlayerScore:" destination="Hlr-PA-eca" id="lxg-fV-fk2"/>
                                     </connections>
                                 </tapGestureRecognizer>
                             </gestureRecognizers>
@@ -162,14 +162,14 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="opponentGameScoreLabel" destination="9fp-xg-3SA" id="joc-5v-HcH"/>
-                        <outlet property="opponentMatchScoreLabel" destination="L6l-u0-MCE" id="V5b-J5-gi4"/>
-                        <outlet property="opponentServingIndicatorLabel" destination="xxe-gX-FFj" id="cqt-00-mzE"/>
-                        <outlet property="opponentSetScoreLabel" destination="OFh-a5-wp2" id="CAv-Pf-bqJ"/>
-                        <outlet property="yourGameScoreLabel" destination="gnp-Ie-dM4" id="pdj-aT-gCi"/>
-                        <outlet property="yourMatchScoreLabel" destination="Fi3-CN-ldL" id="Ubn-N4-G8B"/>
-                        <outlet property="yourServingIndicatorLabel" destination="EJr-ah-qJY" id="Oa2-f1-cQ8"/>
-                        <outlet property="yourSetScoreLabel" destination="no9-vd-L6Q" id="wPa-xz-JqF"/>
+                        <outlet property="playerOneGameScoreLabel" destination="9fp-xg-3SA" id="sh0-hG-wFy"/>
+                        <outlet property="playerOneMatchScoreLabel" destination="L6l-u0-MCE" id="gv5-Ov-m7X"/>
+                        <outlet property="playerOneServingLabel" destination="xxe-gX-FFj" id="w7F-S2-D23"/>
+                        <outlet property="playerOneSetScoreLabel" destination="OFh-a5-wp2" id="qWa-2q-H80"/>
+                        <outlet property="playerTwoGameScoreLabel" destination="gnp-Ie-dM4" id="JCd-fq-6rq"/>
+                        <outlet property="playerTwoMatchScoreLabel" destination="Fi3-CN-ldL" id="VBV-Cs-qcH"/>
+                        <outlet property="playerTwoServingLabel" destination="EJr-ah-qJY" id="Rjd-zC-Rda"/>
+                        <outlet property="playerTwoSetScoreLabel" destination="no9-vd-L6Q" id="9Hc-7X-EvS"/>
                     </connections>
                 </controller>
             </objects>

@@ -7,21 +7,14 @@
 //
 
 import Foundation
-import WatchConnectivity
 
-let firstPlayer = ScoreManager(player: .first)
-let secondPlayer = ScoreManager(player: .second)
+let playerOne = ScoreManager(player: .first)
+let playerTwo = ScoreManager(player: .second)
 
-class ScoreManager: NSObject, WCSessionDelegate {
-    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
-    @available(iOS 9.3, *)
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
+class ScoreManager {
     
     // MARK: Properties
-    
-    var session: WCSession!
-    
-    enum SetTypes {
+    enum SetType {
         case tiebreak, advantage
     }
     
@@ -29,52 +22,25 @@ class ScoreManager: NSObject, WCSessionDelegate {
         case first, second
     }
     
-    var matchLength = 1
-    var setType = SetTypes.advantage
-    
+    static var matchLength = 1
+    static var setType = SetType.advantage
     static var server: Player?
-    static var isInDeuceSituation = false
+    static var isDeuce = false
     static var isInTiebreakGame = false
     static var advantage: Player?
-    
-    var particularPlayer: Player
+    static var winner: Player?
+    var playerThatScored: Player // For determining whether the first player or the second player object is calling the scoring method
     var gameScore = 0
     var setScore = 0
     var matchScore = 0
-    var playerWonMatch = false
     
     // MARK: Initialization
-    
-    init(player particularPlayer: Player) {
-        self.particularPlayer = particularPlayer
-        
-        super.init()
-        
-        if (WCSession.isSupported()) {
-            session = WCSession.default()
-            session.delegate = self // conforms to WCSessionDelegate
-            session.activate()
-        }
+    init(player: Player) {
+        self.playerThatScored = player
     }
+
     
     // MARK: ScoreManager
-    
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-//        if let server = message["Server"] {
-//            ScoreManager.server = server as? ScoreManager.Player
-//        }
-//        DispatchQueue.main.sync {
-//        }
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        // Begin the activation process for the new Apple Watch.
-        session.activate()
-    }
-    
     class func determineWhoServes() {
         if ((arc4random_uniform(2)) == 0) {
             ScoreManager.server = .first
@@ -83,122 +49,196 @@ class ScoreManager: NSObject, WCSessionDelegate {
         }
     }
     
-    func incrementGameScore() {
-        switch gameScore {
-        case 0, 15:
+    class func switchServer() {
+        switch ScoreManager.server {
+        case .first?:
+            ScoreManager.server = .second
+        case .second?:
+            ScoreManager.server = .first
+        default:
+            break
+        }
+    }
+    
+    func scorePoint() {
+        switch (playerThatScored, playerOne.gameScore, playerTwo.gameScore) {
+        case (.first, 0...15, 0...40):
             gameScore += 15
-        case 30:
-            switch particularPlayer {
+        case (.second, 0...40, 0...15):
+            gameScore += 15
+        case (.first, 30, 0...40):
+            gameScore += 10
+            if (playerOne.gameScore == 40 && playerTwo.gameScore == 40) {
+                ScoreManager.isDeuce = true
+            }
+        case (.second, 0...40, 30):
+            gameScore += 10
+            if (playerOne.gameScore == 40 && playerTwo.gameScore == 40) {
+                ScoreManager.isDeuce = true
+            }
+        case (.first, 40, 0...30):
+            playerOne.wonGame()
+        case (.second, 0...30, 40):
+            playerTwo.wonGame()
+        default:
+            scoreAdvantageSituation()
+        }
+        if let advantage = ScoreManager.advantage {
+            print(advantage)
+        }
+    }
+    
+    func scoreAdvantageSituation() {
+        switch ScoreManager.advantage {
+        case .first?:
+            switch playerThatScored {
             case .first:
-                gameScore += 10
-                if secondPlayer.gameScore == 40 {
-                    ScoreManager.isInDeuceSituation = true
-                }
+                playerOne.wonGame()
             case .second:
-                gameScore += 10
-                if firstPlayer.gameScore == 40 {
-                    ScoreManager.isInDeuceSituation = true
-                }
+                ScoreManager.advantage = nil
+                ScoreManager.isDeuce = true
             }
-        case 40:
-            switch particularPlayer {
+        case .second?:
+            switch playerThatScored {
             case .first:
-                switch ScoreManager.isInDeuceSituation {
-                case true:
-                    ScoreManager.advantage = .first
-                    ScoreManager.isInDeuceSituation = false
-                case false:
-                    ScoreManager.advantage = nil
-                    ScoreManager.isInDeuceSituation = true
-                }
+                ScoreManager.advantage = nil
+                ScoreManager.isDeuce = true
             case .second:
-                if ScoreManager.isInDeuceSituation {
-                    ScoreManager.advantage = .second
-                    ScoreManager.isInDeuceSituation = false
-                } else {
-                    ScoreManager.advantage = nil
-                    ScoreManager.isInDeuceSituation = true
-                }
+                playerTwo.wonGame()
             }
-        default: // Advantage situation or further deuce situation
-            if firstPlayer.gameScore == secondPlayer.gameScore { // Deuce
-                switch particularPlayer { // Advantage situation
-                case .first:
-                    ScoreManager.advantage = .first
-                case .second:
-                    ScoreManager.advantage = .second
-                }
-            } else {
-                switch particularPlayer {
-                case .first:
-                    if firstPlayer.gameScore == (secondPlayer.gameScore + 1) {
-                        wonGame()
-                    }
-                case .second:
-                    if secondPlayer.gameScore == (firstPlayer.gameScore + 1) {
-                        wonGame()
-                    }
-                }
-            }
+        default:
+            ScoreManager.advantage = playerThatScored
+            ScoreManager.isDeuce = false
         }
     }
     
     func wonGame() {
-        firstPlayer.gameScore = 0
-        secondPlayer.gameScore = 0
+        ScoreManager.switchServer()
+        playerOne.gameScore = 0
+        playerTwo.gameScore = 0
+        ScoreManager.advantage = nil
         incrementSetScore()
     }
     
+    func incrementSetScore() {
+        switch (playerOne.setScore, playerTwo.setScore) {
+        case (0...4, 0...4):
+            setScore += 1
+        case (5, 0...4):
+            switch playerThatScored {
+            case .first:
+                wonSet()
+            case .second:
+                setScore += 1
+            }
+        case (0...4, 5):
+            switch playerThatScored {
+            case .first:
+                setScore += 1
+            case .second:
+                wonSet()
+            }
+        case (5, 5):
+            setScore += 1
+        case (6, 5):
+            switch playerThatScored {
+            case .first:
+                wonSet()
+            case .second:
+                if ScoreManager.setType == .tiebreak {
+                    ScoreManager.isInTiebreakGame = true
+                }
+                setScore += 1
+            }
+        case (5, 6):
+            switch playerThatScored {
+            case .first:
+                if ScoreManager.setType == .tiebreak {
+                    ScoreManager.isInTiebreakGame = true
+                }
+                setScore += 1
+            case .second:
+                wonSet()
+            }
+        case (6, 6):
+            if ScoreManager.setType == .tiebreak {
+                ScoreManager.isInTiebreakGame = false
+                wonSet()
+            } else {
+                setScore += 1
+            }
+        default: // Advantage set
+            switch playerThatScored {
+            case .first:
+                if playerOne.setScore == (playerTwo.setScore + 1)  {
+                    wonSet()
+                } else {
+                    setScore += 1
+                }
+            case .second:
+                if playerTwo.setScore == (playerOne.setScore + 1) {
+                    wonSet()
+                } else {
+                    setScore += 1
+                }
+            }
+        }
+    }
+    
     func wonSet() {
-        setScore = 0
+        resetSetScore()
         incrementMatchScore()
     }
     
-    func incrementSetScore() {
-        switch setScore {
-        case 0...4:
-            setScore += 1
-        case 5:
-            if setScore <= 4 {
-                wonSet()
-            } else if (setScore >= 5) || (setScore >= setScore + 2) {
-                if setType == .tiebreak && setScore == 6 {
-                    wonSet()
-                } else {
-                    wonGame()
-                }
-            }
-        default:
-            if setScore >= setScore + 2 {
-                wonSet()
-            }
-        }
-    }
-    
     func resetSetScore() {
-        setScore = 0
+        playerOne.setScore = 0
+        playerTwo.setScore = 0
     }
     
     func incrementMatchScore() {
-        switch matchLength {
+        matchScore += 1
+        switch ScoreManager.matchLength {
         case 3:
-            matchScore += 1
             if matchScore == 2 {
-                playerWonMatch = true
+                wonMatch()
             }
         case 5:
-            matchScore += 1
             if matchScore == 3 {
-                playerWonMatch = true
+                wonMatch()
             }
         case 7:
-            matchScore += 1
             if matchScore == 4 {
-                playerWonMatch = true
+                wonMatch()
             }
         default:
-            matchScore += 1
-            playerWonMatch = true
+            wonMatch()
         }
+    }
+    
+    func wonMatch() {
+        ScoreManager.winner = playerThatScored
+    }
+    
+    class func reset() {
+        winner = nil
+        resetGameScores()
+        resetSetScores()
+        resetMatchScores()
+    }
+    
+    class func resetGameScores() {
+        advantage = nil
+        playerOne.gameScore = 0
+        playerTwo.gameScore = 0
+    }
+    
+    class func resetSetScores() {
+        playerOne.setScore = 0
+        playerTwo.setScore = 0
+    }
+    
+    class func resetMatchScores() {
+        playerOne.matchScore = 0
+        playerTwo.matchScore = 0
     }
 }
