@@ -215,7 +215,7 @@ class ScoreManager {
         }
         let myArray = [
             "hello",
-            "trello
+            "trello",
         ]
     }
     
