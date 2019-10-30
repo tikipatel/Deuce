@@ -213,6 +213,10 @@ class ScoreManager {
         default:
             wonMatch()
         }
+        let myArray = [
+            "hello",
+            "trello",
+        ]
     }
     
     func wonMatch() {
